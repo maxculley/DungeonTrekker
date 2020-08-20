@@ -35,8 +35,8 @@ def getDumpTweets():
 	dumpTweets = []
 
 	myresult = executeMultipleQuery("SELECT tweet_id FROM Tweet_dump")
-	for x in myresult:
-		dumpTweets.append(x[0])
+	for data in myresult:
+		dumpTweets.append(data[0])
 	return dumpTweets
 
 
@@ -45,16 +45,16 @@ def updateMentions(mentions):
 	dumpTweetList = getDumpTweets()
 	dumpTweetsSet = set()
 
-	for x in dumpTweetList:
-		dumpTweetsSet.add(str(x))
+	for tweet in dumpTweetList:
+		dumpTweetsSet.add(str(tweet))
 
 
-	for x in mentions:
-		if str(x.id) in dumpTweetsSet:
+	for mention in mentions:
+		if str(mention.id) in dumpTweetsSet:
 			break
 		else:
-			finalList.append(x)
-			executeUpdate("INSERT INTO Tweet_dump VALUES(" + str(x.id) + ", " + str(x.user.id) + ");")
+			finalList.append(mention)
+			executeUpdate("INSERT INTO Tweet_dump VALUES(" + str(mention.id) + ", " + str(mention.user.id) + ");")
 
 	return finalList
 
@@ -63,8 +63,8 @@ def getSavedUsers():
 	finalUsers = set()
 	users = executeMultipleQuery("SELECT user_id FROM Users")
 
-	for x in users:
-		finalUsers.add(x[0])
+	for user in users:
+		finalUsers.add(user[0])
 
 	return finalUsers
 
@@ -73,13 +73,13 @@ def addUser(currentMentionsList):
 	mentionsUserIDList = []
 	count = 0
 
-	for x in currentMentionsList:
-		mentionsUserIDList.append(str(x.user.id))
+	for mention in currentMentionsList:
+		mentionsUserIDList.append(str(mention.user.id))
 
-	for x in mentionsUserIDList:
+	for mention in mentionsUserIDList:
 		userList = getSavedUsers()
-		if x in userList:
+		if mention in userList:
 			pass
 		else:
-			executeUpdate("INSERT INTO Users VALUES(" + str(x) + ", '" + str(((api.get_user(x)).name)) + "', '@" + str(((api.get_user(x)).screen_name)) + "');")
+			executeUpdate("INSERT INTO Users VALUES(" + str(mention) + ", '" + str(((api.get_user(mention)).name)) + "', '@" + str(((api.get_user(mention)).screen_name)) + "');")
 		count += 1
