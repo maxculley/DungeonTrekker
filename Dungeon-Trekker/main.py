@@ -9,15 +9,15 @@ api = getAPI()
 currentMentions = None # List of the current tweet mentions
 finalMentions = None # List of tweets that havent been replied to
 a = 0
+users = []
 
 while(a < 1):
 	currentMentions = api.mentions_timeline() # Get mentions in a list variable
 
 	finalMentions = updateMentions(currentMentions) # Return a list of tweets in the mentions that havent had a reply
 
-	print(finalMentions)
+	addUser(finalMentions)
 
 
-	# for x in finalMentions:
-	# 	executeUpdate("INSERT INTO Tweet_dump VALUES(" + str(x) + ");")
+
 	a += 1
