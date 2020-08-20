@@ -7,21 +7,17 @@ import time
 
 api = getAPI()
 currentMentions = None # List of the current tweet mentions
-updatedMentions = []
-currentID = None # CurrentID of tweet working on
+finalMentions = None # List of tweets that havent been replied to
 a = 0
-found = False
-
 
 while(a < 1):
 	currentMentions = api.mentions_timeline() # Get mentions in a list variable
 
-	updatedMentions = checkMentions(currentMentions) # Check if mentions have already been replied to
-	print(updatedMentions)
+	finalMentions = updateMentions(currentMentions) # Return a list of tweets in the mentions that havent had a reply
 
-	for x in updatedMentions:
-		currentID = x
+	print(finalMentions)
 
-		print("Updated Tweet")
-		executeUpdate("UPDATE General SET latest_mention_id = '" + str(currentID) + "'")
+
+	# for x in finalMentions:
+	# 	executeUpdate("INSERT INTO Tweet_dump VALUES(" + str(x) + ");")
 	a += 1
