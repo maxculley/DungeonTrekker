@@ -18,6 +18,8 @@ while(a < 1):
 
 	addUser(finalMentions)
 
+	refreshDBTweets()
+
 
 
 	a += 1

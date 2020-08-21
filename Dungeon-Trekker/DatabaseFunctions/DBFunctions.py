@@ -46,7 +46,7 @@ def updateMentions(mentions):
 	dumpTweetsSet = set()
 
 	for tweet in dumpTweetList:
-		dumpTweetsSet.add(str(tweet))
+		dumpTweetsSet.add(str(tweet)) # Add each tweet into a set
 
 
 	for mention in mentions:
@@ -83,3 +83,21 @@ def addUser(currentMentionsList):
 		else:
 			executeUpdate("INSERT INTO Users VALUES(" + str(mention) + ", '" + str(((api.get_user(mention)).name)) + "', '@" + str(((api.get_user(mention)).screen_name)) + "');")
 		count += 1
+
+
+############## Database refresh ##############
+
+
+
+def refreshDBTweets():
+	tweetList = getDumpTweets()
+
+	for tweet in tweetList:
+		tempList = []
+		tempList.append(tweet)
+		tempObj = api.statuses_lookup(tempList)
+		if len(tempObj) == 0:
+			executeUpdate("DELETE FROM Tweet_dump WHERE tweet_id = " + str(tweet) + ";")
+		else:
+			pass
+			
