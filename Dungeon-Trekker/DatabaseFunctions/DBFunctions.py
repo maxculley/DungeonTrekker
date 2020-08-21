@@ -69,15 +69,15 @@ def getSavedUsers():
 	return finalUsers
 
 
-def addUser(currentMentionsList):
+def addUser(mentions):
 	mentionsUserIDList = []
 	count = 0
+	userList = getSavedUsers()
 
-	for mention in currentMentionsList:
+	for mention in mentions:
 		mentionsUserIDList.append(str(mention.user.id))
 
 	for mention in mentionsUserIDList:
-		userList = getSavedUsers()
 		if mention in userList:
 			pass
 		else:
