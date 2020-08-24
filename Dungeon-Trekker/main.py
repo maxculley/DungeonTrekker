@@ -18,7 +18,7 @@ while(a < 1):
 	finalMentions = getFinalMentions() # Get all final tweets
 
 	for tweet in finalMentions:
-		text = tweet.text
+		text = (tweet.text).lower()
 		text = text.split(" ", 1)[1]
 		print("Tweet text: " + text)
 
