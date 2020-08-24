@@ -6,9 +6,6 @@ import tweepy
 api = getAPI()
 cursor = getCursor()
 myresult = None
-myresultFinal = []
-count = 0 # Used to access the tweet ID's
-updatedList = []
 
 ############## Execute Queries ##############
 
@@ -19,8 +16,7 @@ def executeUpdate(query):
 def executeSingleQuery(query):
 	cursor.execute(query)
 	myresult = cursor.fetchone()
-	myresultFinal = myresult[0]
-	return myresultFinal
+	return myresult
 
 def executeMultipleQuery(query):
 	cursor.execute(query)
@@ -71,7 +67,6 @@ def getSavedUsers():
 
 def addUser(mentions):
 	mentionsUserIDList = []
-	count = 0
 	userList = getSavedUsers()
 
 	for mention in mentions:
@@ -82,10 +77,9 @@ def addUser(mentions):
 			pass
 		else:
 			executeUpdate("INSERT INTO Users VALUES(" + str(mention) + ", '" + str(((api.get_user(mention)).name)) + "', '@" + str(((api.get_user(mention)).screen_name)) + "');")
-		count += 1
 
 
-############## Database refresh ##############
+############## Database Refresh ##############
 
 
 
@@ -100,4 +94,33 @@ def refreshDBTweets():
 			executeUpdate("DELETE FROM Tweet_dump WHERE tweet_id = " + str(tweet) + ";")
 		else:
 			pass
+
+
+############## Database Check ##############
+
+
+
+def checkUserGame(userID):
+	isUser = None
+	isUser = executeSingleQuery("SELECT user_id FROM Users WHERE user_id = " + str(userID) + ";")
+
+	if isUser == None:
+		return False
+	else:
+		return True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			
