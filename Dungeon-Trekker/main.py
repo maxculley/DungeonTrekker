@@ -14,6 +14,8 @@ users = []
 
 while(a < 1):
 
+	#time.sleep(12)
+
 	refreshDBTweets() # Clean database
 	finalMentions = getFinalMentions() # Get all final tweets
 
@@ -26,21 +28,43 @@ while(a < 1):
 
 		if text == "start":
 			result = checkUserGame(tweet.user.id)
-
 			if result == True:
 				resume(tweet)
 			else:
 				createGame(tweet, False)
 				decideRoom(tweet)
+
 		elif text == "resume":
 			decideRoom(tweet)
+
 		elif text == "new":
 			createGame(tweet, hasGame)
 			decideRoom(tweet)
+
 		elif text == "commands":
 			commands(tweet)
+
 		elif text == "help":
 			help(tweet)
+
+		elif "forward" in text:
+			checkValidDirection(tweet, "forward")
+
+		elif "back" in text:
+			checkValidDirection(tweet, "back")
+
+		elif "right" in text:
+			checkValidDirection(tweet, "right")
+
+		elif "left" in text:
+			checkValidDirection(tweet, "left")
+
+		elif "up" in text:
+			checkValidDirection(tweet, "up")
+
+		elif "down" in text:
+			checkValidDirection(tweet, "down")
+
 		else:
 			notRecognised(tweet)
 

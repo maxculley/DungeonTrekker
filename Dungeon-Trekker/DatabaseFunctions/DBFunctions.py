@@ -1,5 +1,6 @@
 from Connections.twitterAccess import *
 from Connections.dbConnection import *
+from TweepyFunctions.TweepyFunctions import *
 from Rooms.Rooms import *
 
 import tweepy
@@ -25,7 +26,7 @@ def executeMultipleQuery(query):
 	return myresult
 
 
-##############  ##############
+############## Update Data ##############
 
 
 def getDumpTweets():
@@ -54,6 +55,11 @@ def updateMentions(mentions):
 			executeUpdate("INSERT INTO Tweet_dump VALUES(" + str(mention.id) + ", " + str(mention.user.id) + ");")
 
 	return finalList
+
+
+
+############## User Methods ##############
+
 
 
 def getSavedUsers():
@@ -111,6 +117,11 @@ def checkUserGame(userID):
 		return True
 
 
+
+############## Game Functions ##############
+
+
+
 def createGame(tweet, hasGame):
 	if hasGame == True:
 		executeUpdate("UPDATE User_games SET current_room_id= 1, current_code= 0, current_riddle= 0 WHERE user_id= " + str(tweet.user.id) + ";")
@@ -118,12 +129,36 @@ def createGame(tweet, hasGame):
 		executeUpdate("INSERT INTO User_games VALUES(" + str(tweet.user.id) + ", 1, 0, 0);")
 
 
-def decideRoom(tweet):
+def getCurrentRoom(tweet):
 	currentRoom = executeSingleQuery("SELECT current_room_id FROM User_games WHERE user_id= " + str(tweet.user.id) + ";")
-	currentRoom = currentRoom[0]
+	return currentRoom[0]
+
+
+def decideRoom(tweet):
+	currentRoom = getCurrentRoom(tweet)
 
 	if currentRoom == "1":
 		room1(tweet)
+	elif currentRoom == "2":
+		room2(tweet)
+	elif currentRoom == "3":
+		room3(tweet)
+
+
+def updateRoom(tweet, newRoom):
+	executeUpdate("UPDATE User_games SET current_room_id= " + str(newRoom) + " WHERE user_id= " + str(tweet.user.id) + "")
+
+
+def checkValidDirection(tweet, direction):
+	currentRoom = getCurrentRoom(tweet)
+	directionValue = executeSingleQuery("SELECT `" + str(direction) + "` FROM Rooms WHERE room_id= " + str(currentRoom) + ";")
+	directionValue = directionValue[0]
+
+	if directionValue == "0":
+		directionNotRecognised(tweet)
+	else:
+		updateRoom(tweet, directionValue)
+		decideRoom(tweet)
 
 
 
