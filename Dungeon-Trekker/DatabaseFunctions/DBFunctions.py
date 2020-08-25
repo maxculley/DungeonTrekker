@@ -1,5 +1,6 @@
 from Connections.twitterAccess import *
 from Connections.dbConnection import *
+from Rooms.Rooms import *
 
 import tweepy
 
@@ -110,6 +111,19 @@ def checkUserGame(userID):
 		return True
 
 
+def createGame(tweet, hasGame):
+	if hasGame == True:
+		executeUpdate("UPDATE User_games SET current_room_id= 1, current_code= 0, current_riddle= 0 WHERE user_id= " + str(tweet.user.id) + ";")
+	else:
+		executeUpdate("INSERT INTO User_games VALUES(" + str(tweet.user.id) + ", 1, 0, 0);")
+
+
+def decideRoom(tweet):
+	currentRoom = executeSingleQuery("SELECT current_room_id FROM User_games WHERE user_id= " + str(tweet.user.id) + ";")
+	currentRoom = currentRoom[0]
+
+	if currentRoom == "1":
+		room1(tweet)
 
 
 
@@ -119,8 +133,3 @@ def checkUserGame(userID):
 
 
 
-
-
-
-
-			

@@ -20,20 +20,23 @@ while(a < 1):
 	for tweet in finalMentions:
 		text = (tweet.text).lower() # Turn the tweet text lowercase
 		text = text.split(" ", 1)[1] # Get the content of the tweet
+		hasGame = checkUserGame(tweet.user.id)
 
 		print("Tweet text: " + text)
 
 		if text == "start":
-			result = start(tweet)
+			result = checkUserGame(tweet.user.id)
 
 			if result == True:
 				resume(tweet)
 			else:
-				new(tweet)
+				createGame(tweet, False)
+				decideRoom(tweet)
 		elif text == "resume":
-			resumeGame(tweet)
+			decideRoom(tweet)
 		elif text == "new":
-			new(tweet)
+			createGame(tweet, hasGame)
+			decideRoom(tweet)
 		elif text == "commands":
 			commands(tweet)
 		elif text == "help":
