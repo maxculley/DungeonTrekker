@@ -82,7 +82,7 @@ while(True):
 			else:
 				notRecognised(tweet)
 
-		elif "left" or "search" in text:
+		elif "left" in text:
 			if hasGame == True:
 				checkValidDirection(tweet, "left")
 			else:
@@ -97,6 +97,12 @@ while(True):
 		elif "down" in text:
 			if hasGame == True:
 				checkValidDirection(tweet, "down")
+			else:
+				notRecognised(tweet)
+
+		elif "search" in text:
+			if hasGame == True:
+				checkValidDirection(tweet, "left")
 			else:
 				notRecognised(tweet)
 

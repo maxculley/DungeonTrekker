@@ -20,7 +20,7 @@ def help(tweet):
 	api.send_direct_message(tweet.user.id, "Hi! We noticed you needed some help, how can we assist you?")
 
 def directionNotRecognised(tweet):
-	api.update_status("@" + tweet.user.screen_name + " That direction is invalid!, Please enter a valid way to go to proceed.", tweet.id)
+	api.update_status("@" + tweet.user.screen_name + " That direction is invalid! Please enter a valid way to go to proceed.", tweet.id)
 
 def incorrectCode(tweet):
 	api.update_status("@" + tweet.user.screen_name + " That code is incorrect, try again!", tweet.id)

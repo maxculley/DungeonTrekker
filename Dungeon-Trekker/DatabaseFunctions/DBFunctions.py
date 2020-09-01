@@ -139,31 +139,92 @@ def decideRoom(tweet):
 
 	if currentRoom == "1":
 		room1(tweet)
+
 	elif currentRoom == "2":
 		room2(tweet)
+
 	elif currentRoom == "3":
 		room3(tweet)
+
 	elif currentRoom == "4":
 		room4(tweet)
+
 	elif currentRoom == "5":
 		room5(tweet)
+
 	elif currentRoom == "6":
 		room6(tweet)
 		addCodes(tweet)
+
 	elif currentRoom == "7":
 		room7(tweet)
+
 	elif currentRoom == "8":
 		room8(tweet)
+
 	elif currentRoom == "9":
 		room9(tweet)
+
 	elif currentRoom == "10":
 		room10(tweet)
+
 	elif currentRoom == "11":
 		room11(tweet)
+
+	elif currentRoom == "12":
+		room12(tweet)
+
+	elif currentRoom == "13":
+		room13(tweet)
+
 	elif currentRoom == "14":
 		room14(tweet)
+
+	elif currentRoom == "15":
+		room15(tweet)
+
+	elif currentRoom == "16":
+		room16(tweet)
+
+	elif currentRoom == "17":
+		room17(tweet)
+
+	elif currentRoom == "18":
+		room18(tweet)
+
+	elif currentRoom == "19":
+		room19(tweet)
+
+	elif currentRoom == "20":
+		room20(tweet)
+
+	elif currentRoom == "21":
+		room21(tweet)
+
+	elif currentRoom == "22":
+		room22(tweet)
+
+	elif currentRoom == "23":
+		room23(tweet)
+
+	elif currentRoom == "24":
+		room24(tweet)
+
+	elif currentRoom == "25":
+		room25(tweet)
+
+	elif currentRoom == "26":
+		room26(tweet)
+
+	elif currentRoom == "27":
+		room27(tweet)
+
 	elif currentRoom == "90":
 		room90(tweet)
+
+	elif currentRoom == "91":
+		room91(tweet)
+
 
 
 def updateRoom(tweet, newRoom):
@@ -174,6 +235,7 @@ def checkValidDirection(tweet, direction):
 	currentRoom = getCurrentRoom(tweet)
 	directionValue = executeSingleQuery("SELECT `" + str(direction) + "` FROM Rooms WHERE room_id= " + str(currentRoom) + ";")
 	directionValue = directionValue[0]
+
 
 	if directionValue == "0":
 		directionNotRecognised(tweet)
