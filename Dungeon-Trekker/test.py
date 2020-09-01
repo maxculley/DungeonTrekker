@@ -1,6 +1,9 @@
 from Connections.twitterAccess import *
-from Connections.dbConnection import *
+#from Connections.dbConnection import *
 
 api = getAPI()
 
-print(api.get_user(''))
+while(True):
+	tweets = api.user_timeline()
+	for x in tweets:
+		api.destroy_status(x.id)

@@ -32,6 +32,17 @@ CREATE TABLE `Rooms` (
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 INSERT INTO Rooms VALUES(1, 2, 0, 0, 0, 0, 0);
 INSERT INTO Rooms VALUES(2, 3, 0, 0, 0, 0, 0);
+INSERT INTO Rooms VALUES(3, 0, 0, 4, 5, 0, 0);
+INSERT INTO Rooms VALUES(4, 0, 0, 0, 6, 0, 0);
+INSERT INTO Rooms VALUES(5, 0, 0, 6, 0, 0, 0);
+INSERT INTO Rooms VALUES(6, 7, 0, 0, 0, 0, 0);
+INSERT INTO Rooms VALUES(7, 0, 0, 0, 0, 0, 8);
+INSERT INTO Rooms VALUES(8, 9, 0, 0, 0, 0, 0);
+INSERT INTO Rooms VALUES(9, 11, 0, 10, 0, 0, 0);
+INSERT INTO Rooms VALUES(10, 0, 0, 0, 13, 0, 12);
+INSERT INTO Rooms VALUES(11, 14, 90, 0, 0, 0, 0);
+INSERT INTO Rooms VALUES(14, 0, 90, 0, 0, 0, 0);
+INSERT INTO Rooms VALUES(90, 11, 0, 0, 0, 0, 0);
 
 CREATE TABLE `User_games` (
   `user_id` varchar(25) NOT NULL,
@@ -40,3 +51,4 @@ CREATE TABLE `User_games` (
   `current_riddle` varchar(15),
   PRIMARY KEY (`user_id`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO User_games VALUES(1277941458813812737, 8, 'rhyme', 0);

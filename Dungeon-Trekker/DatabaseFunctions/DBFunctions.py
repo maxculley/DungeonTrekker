@@ -143,6 +143,27 @@ def decideRoom(tweet):
 		room2(tweet)
 	elif currentRoom == "3":
 		room3(tweet)
+	elif currentRoom == "4":
+		room4(tweet)
+	elif currentRoom == "5":
+		room5(tweet)
+	elif currentRoom == "6":
+		room6(tweet)
+		addCodes(tweet)
+	elif currentRoom == "7":
+		room7(tweet)
+	elif currentRoom == "8":
+		room8(tweet)
+	elif currentRoom == "9":
+		room9(tweet)
+	elif currentRoom == "10":
+		room10(tweet)
+	elif currentRoom == "11":
+		room11(tweet)
+	elif currentRoom == "14":
+		room14(tweet)
+	elif currentRoom == "90":
+		room90(tweet)
 
 
 def updateRoom(tweet, newRoom):
@@ -160,11 +181,17 @@ def checkValidDirection(tweet, direction):
 		updateRoom(tweet, directionValue)
 		decideRoom(tweet)
 
+def addCodes(tweet):
+	currentRoom = getCurrentRoom(tweet)
+
+	if currentRoom == "6":
+		executeUpdate("UPDATE User_games SET current_code='rhyme' WHERE user_id = " + str(tweet.user.id) + "")
 
 
-
-
-
+def codeCorrect(tweet, newRoomID):
+	updateRoom(tweet, newRoomID)
+	executeUpdate("UPDATE User_games SET current_code='0' WHERE user_id = " + str(tweet.user.id) + "")
+	decideRoom(tweet)
 
 
 

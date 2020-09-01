@@ -22,5 +22,14 @@ def help(tweet):
 def directionNotRecognised(tweet):
 	api.update_status("@" + tweet.user.screen_name + " That direction is invalid!, Please enter a valid way to go to proceed.", tweet.id)
 
+def incorrectCode(tweet):
+	api.update_status("@" + tweet.user.screen_name + " That code is incorrect, try again!", tweet.id)
+
+def incorrectRiddle(tweet):
+	api.update_status("@" + tweet.user.screen_name + " That answer is incorrect, try again!", tweet.id)
+
 def notRecognised(tweet):
 	api.update_status("@" + tweet.user.screen_name + " This command was not recognised, to see a list of possible commands please type 'commands'.", tweet.id)
+
+def gameIsDown():
+	api.send_direct_message(759343803723608064, "The game is down")
