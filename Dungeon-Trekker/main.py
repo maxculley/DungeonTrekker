@@ -14,7 +14,7 @@ users = []
 
 while(True):
 
-	time.sleep(3)
+	time.sleep(12)
 
 	refreshDBTweets() # Clean database
 	finalMentions = getFinalMentions() # Get all final tweets

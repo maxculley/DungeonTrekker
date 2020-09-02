@@ -99,11 +99,20 @@ def room30(tweet):
 def room31(tweet):
  	api.update_status("@" + tweet.user.screen_name + " You decide to take the risk and jump down into the water. 1...2...3...GO! You land into the water below but it isn't what you expected. You land in goo, it's thick and disgusting.\n\nWade forward\nWade left", tweet.id)
 
+def room32(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You decide to take it slowly and go down the ledges, good choice. You jump to a ledge on the right and grab onto the wall. As you look around you notice a few places you could go.\n\nJump forward\nJump left", tweet.id)
+
 def room33(tweet):
  	api.update_status("@" + tweet.user.screen_name + " You struggle through the sticky goo and start to get tired, you cannot keep going through this liquid or you will get stuck. Do you sprint to get out of it quick, or take it slow and try and save your energy?\n\nSprint forward\nWalk right", tweet.id)
 
 def room34(tweet):
  	api.update_status("@" + tweet.user.screen_name + " The goo starts to thin, thank god. You start to hear a rumble behind you and turn around to see what it could be when all of a sudden, a cluster of giant spiders sprint towards you. Think fast!\n\nSprint forward\nHide left", tweet.id)
+
+def room35(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You jump left onto a ledge and only just make it. As you scramble on the edge you slip and fall onto the ledge below. There is a door to your left and a ledge blow you,\n\nLeap down\nGo left", tweet.id)
+
+def room36(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You land onto a ledge on the right and scope out the next move you can make. You decide that you will have to make a leap of faith, but where to?\n\nLeap down\nLeap left", tweet.id)
 
 def room37(tweet):
  	api.update_status("@" + tweet.user.screen_name + " You walk right and end up finding a passage you can go down, the passage seems to lead to a dark, empty room.\n\nAmble forward", tweet.id)
@@ -111,8 +120,17 @@ def room37(tweet):
 def room38(tweet):
  	api.update_status("@" + tweet.user.screen_name + " You decide to hide. You jump into the goo so it is covering you and hold your breath. You hear the stomping of their legs running past you, then...quiet. You leave it 10 minutes and then emerge taking a deep breathe.\n\nAmble forward", tweet.id)
 
+def room39(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You land on the edge of the ledge. Scrambling to try and stay on you slip and fall into a pool of water below. You're a little dazed, as you sit up you see two doors.\n\nEnter left\nEnter right", tweet.id)
+
+def room40(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You land on the edge of a platform. Scrambling to try and stay on you slip and fall into a pool of water below. You're a little dazed, as you sit up you see two doors.\n\nEnter left\nEnter right", tweet.id)
+
 def room41(tweet):
  	api.update_status("@" + tweet.user.screen_name + " You enter a room which has candles all over it. It is too bright to see anything properly. You squint and try to look for a way to go. You spot a staircase, which way will it be?\n\nDown stairs\nUp stairs", tweet.id)
+
+def room42(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You enter a pitch black room, it smells awful. All of a sudden you hear a Squelch. The lights ignite, you realise you are in a room filled with what seems to be rotting flesh! You put your shirt over your mouth and carry on.\n\nDown stairs\nUp stairs", tweet.id)
 
 def room90(tweet):
 	api.update_status("@" + tweet.user.screen_name + " You have done it, You're in the dungeon! This is where the real challenge begins. It is pitch black, do you search for a light or keep going?\n\nSearch", tweet.id)
