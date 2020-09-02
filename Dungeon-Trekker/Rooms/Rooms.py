@@ -87,6 +87,33 @@ def room26(tweet):
 def room27(tweet):
  	api.update_status("@" + tweet.user.screen_name + " You end up in a huge room with shrines everywhere, you look around the room and spot a big wooden door on top of a grand staircase. What could it be?\n\nWalk up", tweet.id)
 
+def room28(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " As you approach the door you see some text written above: 'I am not alive, but I grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. What am I?'\n\nHINT: To respond to a riddle, just type the answer.", tweet.id)
+
+def room29(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You have made it past the door, go you! You feel like you must be reaching the end of your journey, you have been traveling for days. As the lights come on you look down and see that the room is a huge pit with ledges to jump on.\n\nHop down", tweet.id)
+
+def room30(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You have jumped down onto the first ledge. You pull a torch off the wall and throw it off into the pit. It seems to go on forever until there is a splash and the torch goes out. Do you risk jumping off or work your way down?\n\nJump down\nJump right", tweet.id)
+
+def room31(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You decide to take the risk and jump down into the water. 1...2...3...GO! You land into the water below but it isn't what you expected. You land in goo, it's thick and disgusting.\n\nWade forward\nWade left", tweet.id)
+
+def room33(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You struggle through the sticky goo and start to get tired, you cannot keep going through this liquid or you will get stuck. Do you sprint to get out of it quick, or take it slow and try and save your energy?\n\nSprint forward\nWalk right", tweet.id)
+
+def room34(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " The goo starts to thin, thank god. You start to hear a rumble behind you and turn around to see what it could be when all of a sudden, a cluster of giant spiders sprint towards you. Think fast!\n\nSprint forward\nHide left", tweet.id)
+
+def room37(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You walk right and end up finding a passage you can go down, the passage seems to lead to a dark, empty room.\n\nAmble forward", tweet.id)
+
+def room38(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You decide to hide. You jump into the goo so it is covering you and hold your breath. You hear the stomping of their legs running past you, then...quiet. You leave it 10 minutes and then emerge taking a deep breathe.\n\nAmble forward", tweet.id)
+
+def room41(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You enter a room which has candles all over it. It is too bright to see anything properly. You squint and try to look for a way to go. You spot a staircase, which way will it be?\n\nDown stairs\nUp stairs", tweet.id)
+
 def room90(tweet):
 	api.update_status("@" + tweet.user.screen_name + " You have done it, You're in the dungeon! This is where the real challenge begins. It is pitch black, do you search for a light or keep going?\n\nSearch", tweet.id)
 

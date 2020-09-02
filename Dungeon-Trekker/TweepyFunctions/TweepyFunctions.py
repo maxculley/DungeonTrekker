@@ -17,7 +17,7 @@ def resumeGame(tweet, hasGame):
 		api.update_status("@" + tweet.user.screen_name + " You have no game to resume, so you have started a new game!", tweet.id)
 
 def commands(tweet):
-	api.update_status("@" + tweet.user.screen_name + " These are the commands:\n\nStart - Start game\nNew - New game\nResume - Resume game\nCommands - Check commands\nHelp - Get help from the team", tweet.id)
+	api.update_status("@" + tweet.user.screen_name + " These are the commands:\n\nStart - Start game\nNew - New game\nResume - Resume game\nHelp - Get help from the team\nHow to play - Playing instructions\n", tweet.id)
 
 def help(tweet):
 	api.send_direct_message(tweet.user.id, "Hi! We noticed you needed some help, how can we assist you?")

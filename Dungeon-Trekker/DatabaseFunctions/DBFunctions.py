@@ -225,6 +225,34 @@ def decideRoom(tweet):
 	elif currentRoom == "27":
 		room27(tweet)
 
+	elif currentRoom == "28":
+		room28(tweet)
+		addCodes(tweet)
+
+	elif currentRoom == "29":
+		room29(tweet)
+
+	elif currentRoom == "30":
+		room30(tweet)
+
+	elif currentRoom == "31":
+		room31(tweet)
+
+	elif currentRoom == "33":
+		room33(tweet)
+
+	elif currentRoom == "34":
+		room34(tweet)
+
+	elif currentRoom == "37":
+		room37(tweet)
+
+	elif currentRoom == "38":
+		room38(tweet)
+
+	elif currentRoom == "41":
+		room41(tweet)
+
 	elif currentRoom == "90":
 		room90(tweet)
 
@@ -254,11 +282,18 @@ def addCodes(tweet):
 
 	if currentRoom == "6":
 		executeUpdate("UPDATE User_games SET current_code='rhyme' WHERE user_id = " + str(tweet.user.id) + "")
+	elif currentRoom == "28":
+		executeUpdate("UPDATE User_games SET current_riddle='fire' WHERE user_id = " + str(tweet.user.id) + "")
 
 
 def codeCorrect(tweet, newRoomID):
 	updateRoom(tweet, newRoomID)
 	executeUpdate("UPDATE User_games SET current_code='0' WHERE user_id = " + str(tweet.user.id) + "")
+	decideRoom(tweet)
+
+def riddleCorrect(tweet, newRoomID):
+	updateRoom(tweet, newRoomID)
+	executeUpdate("UPDATE User_games SET current_riddle='0' WHERE user_id = " + str(tweet.user.id) + "")
 	decideRoom(tweet)
 
 

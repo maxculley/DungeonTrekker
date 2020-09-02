@@ -73,6 +73,12 @@ while(True):
 			else:
 				incorrectCode(tweet)
 
+		elif currentRoom == "28":
+			if text == currentRiddle:
+				riddleCorrect(tweet, 29)
+			else:
+				incorrectRiddle(tweet)
+
 		elif "forward" in text:
 			if hasGame == True:
 				checkValidDirection(tweet, "forward")
