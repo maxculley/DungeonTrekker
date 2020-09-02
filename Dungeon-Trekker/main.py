@@ -14,16 +14,23 @@ users = []
 
 while(True):
 
-	time.sleep(12)
+	time.sleep(3)
 
 	refreshDBTweets() # Clean database
 	finalMentions = getFinalMentions() # Get all final tweets
+	totalUsers = getUserCount()
+	print(totalUsers)
 
 	for tweet in finalMentions:
 		text = (tweet.text).lower() # Turn the tweet text lowercase
 		text = text.split(" ", 1)[1] # Get the content of the tweet
+
 		hasGame = checkUserGame(tweet.user.id) # Check if the user already has a game
-		currentRoom = getCurrentRoom(tweet)
+
+		if hasGame == False:
+			createGame(tweet, False)
+
+		currentRoom = getCurrentRoom(tweet) # Get current room
 
 		currentCodeTemp = executeSingleQuery("SELECT current_code FROM User_games WHERE user_id = " + str(tweet.user.id) + "")
 		currentCode = currentCodeTemp[0]
@@ -38,14 +45,12 @@ while(True):
 			if hasGame == True:
 				resume(tweet)
 			else:
-				createGame(tweet, False)
 				decideRoom(tweet)
 
 		elif text == "resume":
 			if hasGame == True:
 				decideRoom(tweet)
 			else:
-				createGame(tweet, False)
 				decideRoom(tweet)
 
 		elif text == "new":
@@ -57,6 +62,9 @@ while(True):
 
 		elif text == "help":
 			help(tweet)
+
+		elif text == "stats" and str(tweet.user.id) == "759343803723608064":
+			stats(tweet, totalUsers)
 
 		elif currentRoom == "8":
 			if text == currentCode:

@@ -7,6 +7,7 @@ import tweepy
 
 api = getAPI()
 cursor = getCursor()
+cursor = getMydb().cursor(buffered=True)
 myresult = None
 
 ############## Execute Queries ##############
@@ -115,6 +116,11 @@ def checkUserGame(userID):
 		return False
 	else:
 		return True
+
+def getUserCount():
+	userList = executeMultipleQuery("SELECT user_id FROM Users")
+
+	return len(userList)
 
 
 

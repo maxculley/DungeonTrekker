@@ -19,6 +19,9 @@ def commands(tweet):
 def help(tweet):
 	api.send_direct_message(tweet.user.id, "Hi! We noticed you needed some help, how can we assist you?")
 
+def stats(tweet, users):
+	api.send_direct_message(tweet.user.id, "Stats:\n\nUsers: " + str(users) + "")
+
 def directionNotRecognised(tweet):
 	api.update_status("@" + tweet.user.screen_name + " That direction is invalid! Please enter a valid way to go to proceed.", tweet.id)
 
