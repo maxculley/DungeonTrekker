@@ -19,7 +19,6 @@ while(True):
 	refreshDBTweets() # Clean database
 	finalMentions = getFinalMentions() # Get all final tweets
 	totalUsers = getUserCount()
-	print(totalUsers)
 
 	for tweet in finalMentions:
 		text = (tweet.text).lower() # Turn the tweet text lowercase
@@ -29,6 +28,7 @@ while(True):
 
 		if hasGame == False:
 			createGame(tweet, False)
+			howToPlay(tweet)
 
 		currentRoom = getCurrentRoom(tweet) # Get current room
 
@@ -42,16 +42,10 @@ while(True):
 		print("Tweet text: " + text)
 
 		if text == "start":
-			if hasGame == True:
-				resume(tweet)
-			else:
-				decideRoom(tweet)
+			decideRoom(tweet)
 
 		elif text == "resume":
-			if hasGame == True:
-				decideRoom(tweet)
-			else:
-				decideRoom(tweet)
+			decideRoom(tweet)
 
 		elif text == "new":
 			createGame(tweet, hasGame)
@@ -62,9 +56,16 @@ while(True):
 
 		elif text == "help":
 			help(tweet)
+			favourite(tweet)
 
 		elif text == "stats" and str(tweet.user.id) == "759343803723608064":
 			stats(tweet, totalUsers)
+
+		elif text == "stop" and str(tweet.user.id) == "759343803723608064":
+			exit()
+
+		elif text == "how to play":
+			howToPlay()
 
 		elif currentRoom == "8":
 			if text == currentCode:
