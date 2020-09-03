@@ -132,6 +132,27 @@ def room41(tweet):
 def room42(tweet):
  	api.update_status("@" + tweet.user.screen_name + " You enter a pitch black room, it smells awful. All of a sudden you hear a Squelch. The lights ignite, you realise you are in a room filled with what seems to be rotting flesh! You put your shirt over your mouth and carry on.\n\nDown stairs\nUp stairs", tweet.id)
 
+def room43(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You walk down the stairs, you've been walking for days with no sign of the riches, you are starting to lose hope. As you turn the corner you are greeted with huge steel doors.You push them open and end up in a corridor.\n\nTurn left\nTurn right", tweet.id)
+
+def room44(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You walk up the stairs and think to yourself, you've been walking for days, you are starting to lose hope. As you turn the corner you are greeted with huge doors.You push them open and end up in a corridor.\n\nTurn left\nTurn right", tweet.id)
+
+def room45(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You go down the stairs, struggling to breathe with the awful smell you pick the pace up. As you walk you notice something that seems out of place, a small hole in the left wall. What will you do?\n\nJog forward\nEnter left wall", tweet.id)
+
+def room46(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You go up the stairs, struggling to breathe with the awful smell you pick the pace up. As you walk you notice something that seems out of place, a small hole in the right wall. What will you do?\n\nJog forward\nEnter right wall", tweet.id)
+
+def room47(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You turn the corner and you spot a grand entrance, this has to be where the riches are kept. You prepare yourself for what could be ahead.\n\nAdded x1 Code (*O-A-D-C-O-N-R-E-I-T*)\n\nCreep forward", tweet.id)
+
+def room48(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You crawl through the wall and walk a bit further. Then out of nowhere, you spot a grand entrance, this has to be where the riches are kept. You prepare yourself for what could be ahead.\n\nAdded 1 Code (*O-A-D-C-O-N-R-E-I-T*)\n\nCreep forward", tweet.id)
+
+def room49(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You walk up to the doors and notice there is a password required. This could be what the code was for. Please enter a code:", tweet.id)
+
 def room90(tweet):
 	api.update_status("@" + tweet.user.screen_name + " You have done it, You're in the dungeon! This is where the real challenge begins. It is pitch black, do you search for a light or keep going?\n\nSearch", tweet.id)
 

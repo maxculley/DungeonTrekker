@@ -271,6 +271,27 @@ def decideRoom(tweet):
 	elif currentRoom == "42":
 		room42(tweet)
 
+	elif currentRoom == "43":
+		room43(tweet)
+
+	elif currentRoom == "44":
+		room44(tweet)
+
+	elif currentRoom == "45":
+		room45(tweet)
+
+	elif currentRoom == "46":
+		room46(tweet)
+
+	elif currentRoom == "47":
+		room47(tweet)
+
+	elif currentRoom == "48":
+		room48(tweet)
+
+	elif currentRoom == "49":
+		room49(tweet)
+
 	elif currentRoom == "90":
 		room90(tweet)
 
