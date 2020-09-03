@@ -153,6 +153,12 @@ def room48(tweet):
 def room49(tweet):
  	api.update_status("@" + tweet.user.screen_name + " You walk up to the doors and notice there is a password required. This could be what the code was for. Please enter a code:", tweet.id)
 
+def room50(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " You made it past the door and into a room with a stone coffin in the middle. This is it, you have found the riches! There is some text on the coffin that says:\n\n'What begins but has no end and is the ending of all that begins?'.\n\nWhat could it be?", tweet.id)
+
+def room51(tweet):
+ 	api.update_status("@" + tweet.user.screen_name + " Congratulations 'Trekker " + tweet.user.name + "', the riches are yours! You will have some more adventures to come soon no doubt...\n\nThank you for playing Dungeon Trekker, please share, if you want to try another route, start a new game!", tweet.id)
+
 def room90(tweet):
 	api.update_status("@" + tweet.user.screen_name + " You have done it, You're in the dungeon! This is where the real challenge begins. It is pitch black, do you search for a light or keep going?\n\nSearch", tweet.id)
 

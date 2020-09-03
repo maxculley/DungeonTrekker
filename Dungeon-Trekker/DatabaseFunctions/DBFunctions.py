@@ -288,9 +288,17 @@ def decideRoom(tweet):
 
 	elif currentRoom == "48":
 		room48(tweet)
+		addCodes(tweet)
 
 	elif currentRoom == "49":
 		room49(tweet)
+
+	elif currentRoom == "50":
+		room50(tweet)
+		addCodes(tweet)
+
+	elif currentRoom == "51":
+		room51(tweet)
 
 	elif currentRoom == "90":
 		room90(tweet)
@@ -323,6 +331,10 @@ def addCodes(tweet):
 		executeUpdate("UPDATE User_games SET current_code='rhyme' WHERE user_id = " + str(tweet.user.id) + "")
 	elif currentRoom == "28":
 		executeUpdate("UPDATE User_games SET current_riddle='fire' WHERE user_id = " + str(tweet.user.id) + "")
+	elif currentRoom == "48":
+		executeUpdate("UPDATE User_games SET current_code='coordinate' WHERE user_id = " + str(tweet.user.id) + "")
+	elif currentRoom == "50":
+		executeUpdate("UPDATE User_games SET current_riddle='death' WHERE user_id = " + str(tweet.user.id) + "")
 
 
 def codeCorrect(tweet, newRoomID):

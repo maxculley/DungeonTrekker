@@ -78,15 +78,17 @@ INSERT INTO Rooms VALUES(45, 47, 0, 48, 0, 0, 0); # WORKS
 INSERT INTO Rooms VALUES(46, 47, 0, 0, 48, 0, 0); # WORKS
 INSERT INTO Rooms VALUES(47, 49, 0, 0, 0, 0, 0); # WORKS
 INSERT INTO Rooms VALUES(48, 49, 0, 0, 0, 0, 0); # WORKS
-INSERT INTO Rooms VALUES(49, 0, 0, 0, 0, 0, 0); # WORKS
+INSERT INTO Rooms VALUES(49, 50, 0, 0, 0, 0, 0); # WORKS
+INSERT INTO Rooms VALUES(50, 51, 0, 0, 0, 0, 0); # WORKS
+INSERT INTO Rooms VALUES(51, 0, 0, 0, 0, 0, 0); # WORKS
 INSERT INTO Rooms VALUES(91, 0, 0, 0, 0, 18, 0); # WORKS
 INSERT INTO Rooms VALUES(90, 25, 0, 0, 0, 0, 0); # WORKS
 
 CREATE TABLE `User_games` (
   `user_id` varchar(25) NOT NULL,
   `current_room_id` varchar(3),
-  `current_code` varchar(9),
+  `current_code` varchar(10),
   `current_riddle` varchar(15),
   PRIMARY KEY (`user_id`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-INSERT INTO User_games VALUES(1277941458813812737, 42, 0, 0);
+INSERT INTO User_games VALUES(1277941458813812737, 1, 0, 0);
